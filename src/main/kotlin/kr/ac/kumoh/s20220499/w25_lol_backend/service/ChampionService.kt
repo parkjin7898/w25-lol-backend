@@ -10,7 +10,8 @@ class ChampionService(
     private val repository: ChampionRepository
 ) {
     fun getAllChampions(): List<Champion> = repository.findAll()
-    fun getChampionByName(name: String): Champion? = repository.findById(name).orElse(null)
+    fun getChampionById(id: String): Champion? = repository.findById(id).orElse(null)
+    fun getChampionByEnglishName(englishName: String): Champion? = repository.findByEnglishName(englishName)
 
     // Add more methods as needed, e.g., for data initialization
     fun saveChampion(champion: Champion): Champion {

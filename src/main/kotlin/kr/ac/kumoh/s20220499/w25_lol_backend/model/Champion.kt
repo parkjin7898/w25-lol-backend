@@ -2,11 +2,15 @@ package kr.ac.kumoh.s20220499.w25_lol_backend.model
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
+import org.springframework.data.mongodb.core.mapping.Field
 
 @Document(collection = "champions")
 data class Champion(
     @Id
-    val id: String? = null,
+    val _id: String? = null,
+
+    @Field("id")
+    val englishName: String,
     val key: String,
     val name: String,
     val title: String,

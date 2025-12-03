@@ -18,6 +18,6 @@ class ChampionController(
     @GetMapping
     fun getAllChampions(): List<Champion> = service.getAllChampions()
 
-    @GetMapping("/{id}")
-    fun getChampionByName(@PathVariable name: String): Champion? = service.getChampionByName(name)
+    @GetMapping("/{name}")
+    fun getChampionByEnglishName(@PathVariable name: String): Champion? = service.getChampionByEnglishName(name)
 }
