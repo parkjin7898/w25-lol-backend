@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/champions")
-@CrossOrigin(origins = ["http://localhost:5173"])
+@CrossOrigin(origins = ["http://localhost:5173",
+                        "https://parkjin7898.github.io"
+])
 class ChampionController(
     private val service: ChampionService
 ) {
