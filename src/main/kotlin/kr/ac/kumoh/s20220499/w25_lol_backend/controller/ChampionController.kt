@@ -17,9 +17,12 @@ import org.springframework.web.bind.annotation.RestController
 class ChampionController(
     private val service: ChampionService
 ) {
+    // 1. 모든 챔피언 목록을 조회
+    // GET /api/champions 요청 시 호출된다.
     @GetMapping
     fun getAllChampions(): List<Champion> = service.getAllChampions()
 
+    // 2. 특정 챔피언의 상세 정보를 조회
     @GetMapping("/{name}")
     fun getChampionByEnglishName(@PathVariable name: String): Champion?
             = service.getChampionByEnglishName(name)

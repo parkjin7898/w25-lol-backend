@@ -9,10 +9,14 @@ import org.springframework.stereotype.Service
 class ChampionService(
     private val repository: ChampionRepository
 ) {
+    // 모든 챔피언 조회
     fun getAllChampions(): List<Champion>
             = repository.findAll()
+    // ID로 조회
     fun getChampionById(id: String): Champion?
             = repository.findById(id).orElse(null)
+    // [핵심] 영문명으로 챔피언 조회
+    // 상세정보 조회할때 URL 파라미터로 챔피언의 영문명을 받기 때문
     fun getChampionByEnglishName(englishName: String): Champion?
             = repository.findByEnglishName(englishName)
 }
