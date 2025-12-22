@@ -21,5 +21,6 @@ class ChampionController(
     fun getAllChampions(): List<Champion> = service.getAllChampions()
 
     @GetMapping("/{name}")
-    fun getChampionByEnglishName(@PathVariable name: String): Champion? = service.getChampionByEnglishName(name)
+    fun getChampionByEnglishName(@PathVariable name: String): Champion?
+            = service.getChampionByEnglishName(name)
 }

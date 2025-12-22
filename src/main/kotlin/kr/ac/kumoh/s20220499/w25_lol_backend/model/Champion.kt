@@ -19,5 +19,7 @@ data class Champion(
     val image: Map<String, Any>,
     val tags: List<String>,
     val partype: String,
-    val stats: Map<String, Double>
+    val stats: Map<String, Double>,
+
+    var loadingImageUrl: String? = null
 )

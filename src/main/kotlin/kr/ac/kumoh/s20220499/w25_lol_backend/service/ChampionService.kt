@@ -9,7 +9,10 @@ import org.springframework.stereotype.Service
 class ChampionService(
     private val repository: ChampionRepository
 ) {
-    fun getAllChampions(): List<Champion> = repository.findAll()
-    fun getChampionById(id: String): Champion? = repository.findById(id).orElse(null)
-    fun getChampionByEnglishName(englishName: String): Champion? = repository.findByEnglishName(englishName)
+    fun getAllChampions(): List<Champion>
+            = repository.findAll()
+    fun getChampionById(id: String): Champion?
+            = repository.findById(id).orElse(null)
+    fun getChampionByEnglishName(englishName: String): Champion?
+            = repository.findByEnglishName(englishName)
 }
